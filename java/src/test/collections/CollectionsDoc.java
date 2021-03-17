@@ -9,5 +9,7 @@ import java.util.List;
 public class CollectionsDoc {
 	 // Acessar a referência da documentação
 	Collection<?> c;
+
+	// Demonstra métodos adicionais
 	List<?> l;
 }

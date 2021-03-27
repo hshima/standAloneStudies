@@ -6,6 +6,8 @@ Use:
 ```{r}
 install.packages("rmarkdown")
 install.packages("tidyverse")
+library(tidyverse)
+library(rmarkdown)
 ```
 
 
@@ -46,11 +48,11 @@ plot(e^x)
 ```
 - Função cosseno x: $f(x) = cos(x)$
 ```{r}
-plot(cos(x))
+plot(cos(c(-5,-4,-3,-2,-1,0,1,2,3,4,5)))
 ```
 - Função tangente x: $f(x) = tg(x)$
 ```{r}
-plot(tan(x))
+plot(tan(c(-5,-4,-3,-2,-1,0,1,2,3,4,5)))
 ```
 
 ## Definição de função
@@ -64,3 +66,10 @@ plot(tan(x))
     \begin{array}{rcl} \frac{n}{2} & \mbox{    se n é par}\\
     \frac{3n+1}{2} & \mbox{    se n é ímpar}\end{array}$$
     
+    
+### Questionamentos:
+1. Toda função com restrições tem inversa?
+    1. Que retrições seriam necessárias?
+    2. Que retrições seriam sificientes?
+    3. Restrições = Condições
+    4. Dê exemplos e contra-exemplos

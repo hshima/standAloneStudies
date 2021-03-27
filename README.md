@@ -3,7 +3,9 @@ General studies documentation
 
 Documentation structure:
 
-```java
+```yml
+math
+    Cálculo
 java
     collections
 ```

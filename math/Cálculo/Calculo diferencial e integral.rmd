@@ -1,0 +1,24 @@
+install.packages("rmarkdown")
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Calculo diferencial e integral de funções
+fonte: [Univesp](https://www.youtube.com/watch?v=KOfsnjaTZvY&t=1160s&ab_channel=UNIVESP) \
+Contato do professor: samuel@ime.unicamp.br
+## Cálculo Diferencial e Integral de Funções (reais) e de variável real
+## Conceito Chave
+- Variações (taxas, velocidades, ...)
+- Diferenças (mudanças, comparações, ...)
+- Somas (acréscimos, adições, ...)
+- Infinitésimos
+- Infinitos
+
+## Funções: noções básicas
+- Reta: `f(x) `
+```{r}
+x <- c(0,1,2,3,4,5,6,7,8,9,10)
+plot(x)
+```
+

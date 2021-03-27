@@ -1,0 +1,66 @@
+---
+title: "Cálculo Diferencial e Integral de Funções (reais) e de variável real"
+output: html_notebook
+---
+Use:
+```{r}
+install.packages("rmarkdown")
+install.packages("tidyverse")
+```
+
+
+fonte: [Univesp](https://www.youtube.com/watch?v=KOfsnjaTZvY&t=1160s&ab_channel=UNIVESP) \
+Contato do professor: [samuel](samuel@ime.unicamp.br)
+
+# Conceitos Chave
+- Variações (taxas, velocidades, ...)
+- Diferenças (mudanças, comparações, ...)
+- Somas (acréscimos, adições, ...)
+- Infinitésimos
+- Infinitos
+
+## Funções: noções básicas
+Definição das variáveis de amostragem:
+```{r}
+x <- c(-500:500)
+y <- x
+```
+### Exemplos de função:
+
+- Função reta: $f(x) = x$
+```{r}
+plot(y,x)
+```
+- Função cônica: $f(x) = x^2$
+```{r}
+plot(y,x^2)
+```
+- Função cúbica: $f(x) = x^3$
+```{r}
+plot(y, x^3)
+```
+- Função Exponencial: $f(x) = e^x$
+```{r}
+e <- 1.01
+plot(e^x)
+```
+- Função cosseno x: $f(x) = cos(x)$
+```{r}
+plot(cos(x))
+```
+- Função tangente x: $f(x) = tg(x)$
+```{r}
+plot(tan(x))
+```
+
+## Definição de função
+1. Nem toda curva representa uma função: Um corte paralelo em relação ao eixo y não pode ter mais de um ponto.
+
+2. Sequências numéricas podem ser funções.
+  Exemplo: 
+  
+    $$f : N \to  N\\
+    n \mapsto m = f(n) \{ 
+    \begin{array}{rcl} \frac{n}{2} & \mbox{    se n é par}\\
+    \frac{3n+1}{2} & \mbox{    se n é ímpar}\end{array}$$
+    

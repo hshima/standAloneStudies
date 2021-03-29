@@ -24,47 +24,60 @@ Contato do professor: [samuel](samuel@ime.unicamp.br)
 ## Funções: noções básicas
 Definição das variáveis de amostragem:
 ```{r}
-x <- c(-500:500)
+x <- c(-100:100)
 y <- x
+
 ```
+
 ### Exemplos de função:
 
 - Função reta: $f(x) = x$
+
 ```{r}
-plot(y,x)
+ggplot(data.frame(y,x),
+       aes(y,x)) + geom_line()
 ```
 - Função cônica: $f(x) = x^2$
+
 ```{r}
-plot(y,x^2)
+ggplot(data.frame(y,x^2),
+       aes(y,x^2)) + geom_line()
 ```
 - Função cúbica: $f(x) = x^3$
 ```{r}
-plot(y, x^3)
+ggplot(data.frame(y, x^3),
+       aes(y, x^3)) + geom_line()
 ```
 - Função Exponencial: $f(x) = e^x$
 ```{r}
-e <- 1.01
-plot(e^x)
+ggplot(data.frame(y, exp(1)),
+       aes(y, e^x)) + geom_line()
 ```
 - Função cosseno x: $f(x) = cos(x)$
 ```{r}
-plot(cos(c(-5,-4,-3,-2,-1,0,1,2,3,4,5)))
+df <- data.frame(z,cos(z))
+ggplot(df,
+       aes(z, cos(z))) + geom_line()
 ```
 - Função tangente x: $f(x) = tg(x)$
 ```{r}
-plot(tan(c(-5,-4,-3,-2,-1,0,1,2,3,4,5)))
+df <- data.frame(z,tan(z))
+ggplot(df,
+       aes(z, 
+           tan(z))) + geom_line()
 ```
 
 ## Definição de função
-1. Nem toda curva representa uma função: Um corte paralelo em relação ao eixo y não pode ter mais de um ponto.
+- Nem toda curva representa uma função: Um corte paralelo em relação ao eixo y não pode ter mais de um ponto.
 
-2. Sequências numéricas podem ser funções.
+- Sequências numéricas podem ser funções.
   Exemplo: 
-  
-    $$f : N \to  N\\
-    n \mapsto m = f(n) \{ 
-    \begin{array}{rcl} \frac{n}{2} & \mbox{    se n é par}\\
-    \frac{3n+1}{2} & \mbox{    se n é ímpar}\end{array}$$
+$$
+f : N \to  N\\
+  n \mapsto m = f(n) \biggl\{
+  \begin{array}{rcl} \frac{n}{2} & \mbox{    se $n$ é par}\\
+  \frac{3n+1}{2} & \mbox{    se n é ímpar}\end{array}
+$$
     
     
 ### Questionamentos:
@@ -73,3 +86,54 @@ plot(tan(c(-5,-4,-3,-2,-1,0,1,2,3,4,5)))
     2. Que retrições seriam sificientes?
     3. Restrições = Condições
     4. Dê exemplos e contra-exemplos
+    
+# Construção e definição de novas funções
+## Função módulo
+$$ |x| = \biggl\{ \begin{array} 
+'x \mbox{    se x } \ge  0\\
+-x \mbox{   se x } < 0\end{array}$$
+Também representada por: 
+$$|x| = \sqrt{x^2}$$
+```{r}
+z <- abs(x)
+ggplot(data.frame(x,z),
+       aes(x,z)) + geom_line()
+```
+
+Ao definir a condição $y$, para números maiores que $x$, maior será o ângulo de inclinação em relação ao eixo $x$ e sua reversa:
+```{r}
+z <- abs(x)
+ggplot(data.frame(x,z),
+       aes(x,z*2)) + geom_line(aes(colour = "blue")) + geom_line(data = data.frame(x,y), aes(x,z, colour = "smooth"))
+```
+
+
+##  Composição
+### Função cosseno
+
+### Função exponencial
+$$
+f(x) = a^x \mbox{, onde } a>0 \mbox{ e } a \ne 1 \mbox{.}\\
+\mbox{se } a > 1 \mbox{ a função é crescente,}\\
+\mbox{se } a < 1 \mbox{, a função é decrescente.}\\
+Dom(f) = \mathbb{R} \mbox{ e } Im(f) = (0, +\infty)
+$$
+se $$ a>1 \mbox{, a função é crescente } $$
+
+### Função logarítmica
+$$
+\mbox{se } y = f(x) = a^x \mbox{, então } x = f^-1(y)= \log_a{y}
+$$
+```{r}
+
+ggplot(data.frame(x,log(x, base = exp(1))),
+       aes(x,log(x, base = exp(1)))) + geom_line()
+```
+### Funções trigonométricas
+$$
+y = f(x) = sen(x)\\
+Dom(f) = \mathbb{R} \mbox{ e } Im(f) = [-1,1]
+\\
+y = g(x) = cos(x)\\
+Dom(g) = \mathbb{R} \mbox{ e } Im(g) = [-1,1]
+$$

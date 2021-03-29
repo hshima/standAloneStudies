@@ -1,0 +1,31 @@
+---
+title: "Conceituação: Domínio, Contra domínio e imagem"
+output: html_notebook
+---
+use:
+```{r}
+install.packages("VennDiagram")                       # Install VennDiagram package
+library("VennDiagram")                                # Load VennDiagram package
+```
+
+## Domínio
+- Notação: $$ D(f) = \{ x,y,z,...,n \} \rightarrow x $$
+
+## Contra domínio
+- Notação: $$ CD(f) = \{ a,b,c,d,...,m \} \rightarrow y $$
+
+## Imagem
+Os elementos do conjunto imagem são os elementos do contradomínio que satisfazem a condição da função: $$ f(x) = x -2 $$
+
+- Notação: $$ Im(f) = x \mapsto f(x) = x-y $$
+
+### Diagramação
+
+|D(f)|CD(f)|imagem|
+|---|---|---|
+|x|x-2|presente|
+|y|y-2|presente|
+|z|z-2|presente|
+|d|d-2|Não presente|
+|n|n-2|presente|
+
